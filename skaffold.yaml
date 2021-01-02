@@ -1,0 +1,60 @@
+apiVersion: skaffold/v2alpha3
+kind: Config
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+build:
+  local:
+    push: false
+  #googleCloudBuild:
+  #    projectId: ticketing-299514
+  artifacts:
+    - image: denizgirginer8/ticket-auth #us.gcr.io/ticketing-299514/auth
+      context: auth # docker build context folder
+      docker:
+        dockerfile: dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: denizgirginer8/tickets #us.gcr.io/ticketing-299514/tickets
+      context: tickets # docker build context folder
+      docker:
+        dockerfile: dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: denizgirginer8/orders #us.gcr.io/ticketing-299514/orders
+      context: orders # docker build context folder
+      docker:
+        dockerfile: dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: denizgirginer8/expiration #us.gcr.io/ticketing-299514/orders
+      context: expiration # docker build context folder
+      docker:
+        dockerfile: dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: denizgirginer8/payments #us.gcr.io/ticketing-299514/orders
+      context: payments # docker build context folder
+      docker:
+        dockerfile: dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
+    - image: denizgirginer8/client 
+      context: client 
+      docker:
+        dockerfile: dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .

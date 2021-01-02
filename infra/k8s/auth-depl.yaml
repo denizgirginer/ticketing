@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ticket-auth-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ticket-auth
+  template:
+    metadata:
+      labels:
+        app: ticket-auth
+    spec:
+      containers:
+        - name: ticket-auth
+          image: denizgirginer8/ticket-auth #us.gcr.io/ticketing-299514/auth
+          imagePullPolicy: Never
+          env:
+            - name: MONGO_URI
+              value: 'mongodb://auth-mongo-srv:27017/auth'
+            - name: JWT_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret
+                  key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ticket-auth-service
+spec:
+  selector:
+    app: ticket-auth
+  ports:
+    - name: ticket-auth
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
