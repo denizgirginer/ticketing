@@ -7,6 +7,7 @@ import { TicketUpdatedListener } from './events/listeners/ticket-updated-listene
 import { natsClient } from './nats-client';
 
 const start = async () => {
+  console.log('stargin gce ...');
   if(!process.env.JWT_KEY){
     throw new Error('JWT_KEY not defined');
   }
