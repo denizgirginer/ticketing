@@ -31,5 +31,28 @@ spec:
             backend:
               serviceName: client-srv
               servicePort: 3000
+    - host: denizgirginer8.xyz
+      http:
+        paths:
+          - path: /api/orders/?(.*)
+            backend:
+              serviceName: orders-service
+              servicePort: 3000
+          - path: /api/users/?(.*)
+            backend:
+              serviceName: ticket-auth-service
+              servicePort: 3000
+          - path: /api/tickets/?(.*)
+            backend:
+              serviceName: tickets-service
+              servicePort: 3000
+          - path: /api/payments/?(.*)
+            backend:
+              serviceName: payments-service
+              servicePort: 3000
+          - path: /?(.*)
+            backend:
+              serviceName: client-srv
+              servicePort: 3000
           
           
