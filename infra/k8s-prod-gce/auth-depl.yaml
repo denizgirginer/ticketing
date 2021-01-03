@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ticket-auth
-          image: us.gcr.io/ticketing-299514/ticket-auth
+          image: gcr.io/ticketing-299514/ticket-auth
           #imagePullPolicy: Never ???
           env:
             - name: MONGO_URI
