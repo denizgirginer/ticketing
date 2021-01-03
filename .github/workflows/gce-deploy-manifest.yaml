@@ -10,7 +10,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: cluster-1    # TODO: update to cluster name
   GKE_ZONE: europe-west4-c  # TODO: update to cluster zone
-  
+
 jobs:
   build:
     runs-on: ubuntu-latest
