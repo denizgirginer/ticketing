@@ -8,7 +8,7 @@ metadata:
   name: ingress-service
 spec:
   rules:
-    - host: www.denizgirginer8.com
+    - host: www.denizgirginer8.xyz
       http:
         paths:
           - path: /api/orders/?(.*)
