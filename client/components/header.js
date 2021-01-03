@@ -19,7 +19,7 @@ const Header = ({currentUser})=> {
 
     return <nav className="navbar navbar-ligh bg-light">
         <Link href="/">
-            <a className="navbar-brand">GitTix v1</a>
+            <a className="navbar-brand">GitTix v2</a>
         </Link>
 
         <div className="d-flex justify-content-end">
