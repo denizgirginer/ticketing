@@ -15,7 +15,7 @@ spec:
       containers:
         - name: ticket-auth
           image: denizgirginer8/ticket-auth #us.gcr.io/ticketing-299514/auth
-          imagePullPolicy: Never
+          #imagePullPolicy: Never
           env:
             - name: MONGO_URI
               value: 'mongodb://auth-mongo-srv:27017/auth'
