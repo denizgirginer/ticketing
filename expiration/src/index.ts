@@ -2,7 +2,7 @@ import { OrderCreatedListener } from './events/listeners/order-created-listener'
 import { natsClient } from './nats-client';
 
 const start = async () => {
-  
+  console.log('starting gce...')
   if(!process.env.NATS_CLUSTER){
     throw new Error('NATS_CLUSTER not defined');
   }

@@ -15,7 +15,7 @@ spec:
       containers:
         - name: tickets
           image: gcr.io/ticketing-299514/tickets
-          imagePullPolicy: Never
+          # imagePullPolicy: Never
           env:
             - name: NATS_CLIENT_ID
               valueFrom:
