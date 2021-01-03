@@ -16,6 +16,9 @@ spec:
         - name: tickets
           image: gcr.io/ticketing-299514/tickets
           # imagePullPolicy: Never
+          resources:
+            requests:
+              cpu: "50m"
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

@@ -15,6 +15,9 @@ spec:
       containers:
         - name: tickets-mongo
           image: mongo
+          resources:
+            requests:
+              cpu: "50m"
 ---
 apiVersion: v1
 kind: Service

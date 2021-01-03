@@ -16,6 +16,9 @@ spec:
         - name: expiration
           image: gcr.io/ticketing-299514/expiration
           # imagePullPolicy: Never
+          resources:
+            requests:
+              cpu: "50m"
           env:
             - name: NATS_CLIENT_ID
               valueFrom:

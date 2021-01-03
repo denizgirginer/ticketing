@@ -16,6 +16,9 @@ spec:
         - name: client
           image:  gcr.io/ticketing-299514/client
           #imagePullPolicy: Never
+          resources:
+            requests:
+              cpu: "50m"
           env:
             - name: JWT_KEY
               valueFrom:

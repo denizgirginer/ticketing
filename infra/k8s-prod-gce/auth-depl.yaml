@@ -16,6 +16,9 @@ spec:
         - name: ticket-auth
           image: gcr.io/ticketing-299514/ticket-auth
           #imagePullPolicy: Never ???
+          resources:
+            requests:
+              cpu: "50m"
           env:
             - name: MONGO_URI
               value: 'mongodb://auth-mongo-srv:27017/auth'
