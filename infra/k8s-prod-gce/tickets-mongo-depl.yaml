@@ -12,9 +12,16 @@ spec:
       labels:
         app: tickets-mongo
     spec:
+      volumes:
+        - name: tickets-storage
+          persistentVolumeClaim:
+            claimName: db-pvc
       containers:
         - name: tickets-mongo
           image: mongo
+          volumeMounts:
+            - name: tickets-storage
+              mountPath: '/data/db'
           resources:
             requests:
               cpu: "50m"
