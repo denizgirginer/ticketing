@@ -12,9 +12,16 @@ spec:
       labels:
         app: orders-mongo
     spec:
+      volumes:
+        - name: orders-storage
+          persistentVolumeClaim:
+            claimName: db-pvc-orders
       containers:
         - name: orders-mongo
           image: mongo
+          volumeMounts:
+            - name: orders-storage
+              mountPath: '/data/db'
           resources:
             requests:
               cpu: "50m"

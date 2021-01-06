@@ -15,7 +15,7 @@ spec:
       volumes:
         - name: tickets-storage
           persistentVolumeClaim:
-            claimName: db-pvc
+            claimName: db-pvc-tickets
       containers:
         - name: tickets-mongo
           image: mongo

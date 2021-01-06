@@ -12,9 +12,16 @@ spec:
       labels:
         app: payments-mongo
     spec:
+      volumes:
+        - name: payments-storage
+          persistentVolumeClaim:
+            claimName: db-pvc-payments
       containers:
         - name: payments-mongo
           image: mongo
+          volumeMounts:
+            - name: payments-storage
+              mountPath: '/data/db'
           resources:
             requests:
               cpu: "50m"
