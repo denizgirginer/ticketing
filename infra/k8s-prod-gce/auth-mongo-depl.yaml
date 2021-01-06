@@ -12,7 +12,7 @@ spec:
       labels:
         app: auth-mongo
     spec:
-    volumes:
+      volumes:
         - name: auth-storage
           persistentVolumeClaim:
             claimName: db-pvc
