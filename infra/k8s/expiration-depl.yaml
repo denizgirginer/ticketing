@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: expiration
-          image: denizgirginer8/expiration #us.gcr.io/ticketing-299514/auth
+          image: denizgirginer8/expiration
           imagePullPolicy: Never
           env:
             - name: NATS_CLIENT_ID

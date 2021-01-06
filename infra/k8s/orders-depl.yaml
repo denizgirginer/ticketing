@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: orders
-          image: denizgirginer8/orders #us.gcr.io/ticketing-299514/auth
+          image: denizgirginer8/orders
           imagePullPolicy: Never
           env:
             - name: NATS_CLIENT_ID
