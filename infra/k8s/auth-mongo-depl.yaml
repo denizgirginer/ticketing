@@ -15,7 +15,7 @@ spec:
       volumes:
         - name: auth-storage
           persistentVolumeClaim:
-            claimName: db-pvc
+            claimName: db-pvc-auth
       containers:
         - name: auth-mongo
           image: mongo

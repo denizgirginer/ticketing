@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: db-pvc-tickets
+spec:
+  accessModes:
+    - ReadWriteOnce # single node ReadOnlyMany, ReadWriteMany
+  #storageClassName: manual
+  resources:
+    requests:
+      storage: 100Mi
