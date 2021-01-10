@@ -12,7 +12,7 @@ spec:
       labels:
         app: tickets-mongo
     spec:
-    volumes:
+      volumes:
         - name: tickets-storage
           persistentVolumeClaim:
             claimName: db-pvc-tickets

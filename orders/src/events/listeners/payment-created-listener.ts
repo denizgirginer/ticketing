@@ -1,8 +1,6 @@
 import { Subjects, Listener, PaymentCreatedEvent, OrderStatus } from '@denizgirginer8/common'
 import { Message } from 'node-nats-streaming';
 import { Order } from '../../models/order';
-import { natsClient } from '../../nats-client';
-import { OrderCreatedPublisher } from '../publishers/order-created-publisher';
 import { queGroupName} from './que-group-name'
 
 export class PaymentCreatedListener extends Listener<PaymentCreatedEvent> {

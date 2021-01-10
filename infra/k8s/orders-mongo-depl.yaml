@@ -20,7 +20,7 @@ spec:
         - name: orders-mongo
           image: mongo
           volumeMounts:
-            - name: tickets-storage
+            - name: orders-storage
               mountPath: '/data/db'
 ---
 apiVersion: v1
