@@ -48,6 +48,7 @@ router.post('/', requireAuth, [
         ticket,
         userId: req.currentUser!.id
     });
+    
 
     await order.save();
 
